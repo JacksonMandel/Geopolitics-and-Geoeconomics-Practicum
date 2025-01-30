@@ -177,7 +177,7 @@
 
 \CommentTok{\#Importing OECD Data on Intermediate, Final, and Gross Imports}
 
-\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}Intermediate Final and Gross Imports.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{data }\OtherTok{\textless{}{-}}\NormalTok{ readr}\SpecialCharTok{::}\FunctionTok{read\_csv}\NormalTok{(}\StringTok{\textquotesingle{}ImportData.csv\textquotesingle{}}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -209,10 +209,20 @@
 \NormalTok{df\_wide}\SpecialCharTok{$}\NormalTok{IntImpPer }\OtherTok{\textless{}{-}}\NormalTok{ (df\_wide}\SpecialCharTok{$}\NormalTok{IMGR\_INT }\SpecialCharTok{/}\NormalTok{ df\_wide}\SpecialCharTok{$}\NormalTok{IMGR) }\SpecialCharTok{*} \DecValTok{100}
 
 \NormalTok{df\_wide}\SpecialCharTok{$}\NormalTok{FinImpPer }\OtherTok{\textless{}{-}}\NormalTok{ (df\_wide}\SpecialCharTok{$}\NormalTok{IMGR\_FNL }\SpecialCharTok{/}\NormalTok{ df\_wide}\SpecialCharTok{$}\NormalTok{IMGR) }\SpecialCharTok{*} \DecValTok{100}
+\end{Highlighting}
+\end{Shaded}
 
+An initial exploration shows that finished goods are a far higher share
+of US imports than Chinese imports. The percentage of finished goods has
+also been increasing over time; the percentage of finished goods
+imported surpassed the percentage of intermediate goods imported for the
+first time in 1999.
+
+\begin{Shaded}
+\begin{Highlighting}[]
 \FunctionTok{ggplot}\NormalTok{(df\_wide, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ TIME\_PERIOD, }\AttributeTok{y =}\NormalTok{ FinImpPer, }\AttributeTok{fill =} \StringTok{"Finished Goods"}\NormalTok{)) }\SpecialCharTok{+}
   \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{) }\SpecialCharTok{+}
-  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ IntImpPer, }\AttributeTok{fill =} \StringTok{"Intermediate Goods"}\NormalTok{), }\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{y =}\NormalTok{ IntImpPer, }\AttributeTok{fill =} \StringTok{"Intermediate Goods"}\NormalTok{), }\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{position =} \StringTok{"dodge"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\NormalTok{ REF\_AREA) }\SpecialCharTok{+}  \CommentTok{\# One panel per country}
   \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Proportion of Finished and Intermediate Goods by Year"}\NormalTok{,}
        \AttributeTok{y =} \StringTok{"Percentage of Total Imports"}\NormalTok{,}
@@ -223,6 +233,6 @@
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{DATA-EXPLORATION_files/figure-latex/unnamed-chunk-1-1.pdf}
+\includegraphics{DATA-EXPLORATION_files/figure-latex/unnamed-chunk-2-1.pdf}
 
 \end{document}

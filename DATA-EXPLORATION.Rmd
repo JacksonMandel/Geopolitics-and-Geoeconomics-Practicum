@@ -21,7 +21,7 @@ library(ggplot2)
 
 #Importing OECD Data on Intermediate, Final, and Gross Imports
 
-data <- readr::read_csv('Intermediate Final and Gross Imports.csv')
+data <- readr::read_csv('ImportData.csv')
 
 df_wide <- pivot_wider(data, names_from = MEASURE, values_from = OBS_VALUE)
 

@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.28)  30 JAN 2025 17:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2025.1.30)  30 JAN 2025 18:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **DATA-EXPLORATION.tex
 (./DATA-EXPLORATION.tex
-LaTeX2e <2024-11-01> patch level 1
+LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2024-12-25>
 (/Users/Jack/Library/TinyTeX/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2024/06/29 v1.4n Standard LaTeX document class
@@ -570,7 +570,7 @@ l.151 \end{verbatim}
 Here is how much of TeX's memory you used:
  13207 strings out of 475178
  204017 string characters out of 5765543
- 605292 words of memory out of 5000000
+ 605308 words of memory out of 5000000
  35979 multiletter control sequences out of 15000+600000
  580845 words of font info for 58 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
