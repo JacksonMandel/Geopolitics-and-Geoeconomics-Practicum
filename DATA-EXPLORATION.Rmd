@@ -36,6 +36,8 @@ df_wide$FinImpPer <- (df_wide$IMGR_FNL / df_wide$IMGR) * 100
 
 An initial exploration shows that finished goods are a far higher share of US imports than Chinese imports.  The percentage of finished goods has also been increasing over time; the percentage of finished goods imported surpassed the percentage of intermediate goods imported for the first time in 1999.
 
+Since 1995 between 70 and 80% of China's imports have been intermediate goods.  Interestingly, this percentage has not varied much over time.
+
 ```{r}
 
 ggplot(df_wide, aes(x = TIME_PERIOD, y = FinImpPer, fill = "Finished Goods")) +
